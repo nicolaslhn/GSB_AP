@@ -18,56 +18,59 @@
 
 ?>
 <!DOCTYPE html>
-<html>
+<html lang ="en">
     <head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta charset="UTF-8">
-        <title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title> 
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="">
         <meta name="author" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Intranet du Laboratoire Galaxy-Swiss Bourdin</title>
         <link href="./styles/bootstrap/bootstrap.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <link href="./styles/style.css" rel="stylesheet">
     </head>
     <body>
+
         <div class="container">
             <?php
             $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
             if ($estConnecte) {
                 ?>
             <div class="header">
-                <div class="row vertical-align">
+                <div class="row align-items-center">
                     <div class="col-md-4">
                         <h1>
-                            <img src="./images/logo.jpg" class="img-responsive" 
+                            <img src="./images/logo.jpg" class="img-fluid" 
                                  alt="Laboratoire Galaxy-Swiss Bourdin" 
                                  title="Laboratoire Galaxy-Swiss Bourdin">
                         </h1>
                     </div>
                     <div class="col-md-8">
-                        <ul class="nav nav-pills pull-right" role="tablist">
-                            <li <?php if (!$uc || $uc == 'accueil') { ?>class="active" <?php } ?>>
-                                <a href="index.php">
-                                    <span class="glyphicon glyphicon-home"></span>
+                        <ul class="nav nav-pills justify-content-end" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link<?= (!$uc || $uc == 'accueil') ? ' active' : '' ?>" href="index.php">
+                                    <i class="bi bi-house"></i>
                                     Accueil
                                 </a>
                             </li>
-                            <li <?php if ($uc == 'gererFrais') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=gererFrais&action=saisirFrais">
-                                    <span class="glyphicon glyphicon-pencil"></span>
+                            <li class="nav-item">
+                                <a class="nav-link<?= ($uc == 'gererFrais') ? ' active' : '' ?>"
+                                   href="index.php?uc=gererFrais&action=saisirFrais">
+                                    <i class="bi bi-pencil"></i>
                                     Renseigner la fiche de frais
                                 </a>
                             </li>
-                            <li <?php if ($uc == 'etatFrais') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=etatFrais&action=selectionnerMois">
-                                    <span class="glyphicon glyphicon-list-alt"></span>
+                            <li class="nav-item">
+                                <a class="nav-link<?= ($uc == 'etatFrais') ? ' active' : '' ?>"
+                                   href="index.php?uc=etatFrais&action=selectionnerMois">
+                                    <i class="bi bi-card-list"></i>
                                     Afficher mes fiches de frais
                                 </a>
                             </li>
-                            <li 
-                            <?php if ($uc == 'deconnexion') { ?>class="active"<?php } ?>>
-                                <a href="index.php?uc=deconnexion&action=demandeDeconnexion">
-                                    <span class="glyphicon glyphicon-log-out"></span>
+                            <li class="nav-item">
+                                <a class="nav-link<?= ($uc == 'deconnexion') ? ' active' : '' ?>"
+                                   href="index.php?uc=deconnexion&action=demandeDeconnexion">
+                                    <i class="bi bi-box-arrow-right"></i>
                                     Déconnexion
                                 </a>
                             </li>
@@ -80,7 +83,7 @@
                 ?>   
                 <h1>
                     <img src="./images/logo.jpg"
-                         class="img-responsive center-block"
+                         class="img-fluid d-block mx-auto"
                          alt="Laboratoire Galaxy-Swiss Bourdin"
                          title="Laboratoire Galaxy-Swiss Bourdin">
                 </h1>
