@@ -69,19 +69,10 @@
                     </li>
                 </ul>
                 <hr>
-                <div class="dropdown">
-                    <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                    <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none" aria-expanded="false">
                         <span class="bi bi-person-circle fs-4 me-2"></span>
                         <strong><?= $_SESSION['prenom'] . ' ' . $_SESSION['nom'] ?></strong>
                     </a>
-                    <ul class="dropdown-menu text-small shadow">
-                        <li><a class="dropdown-item" href="index.php">Accueil</a></li>
-                        <li><a class="dropdown-item" href="index.php?uc=gererFrais&action=saisirFrais">Renseigner la fiche de frais</a></li>
-                        <li><a class="dropdown-item" href="index.php?uc=etatFrais&action=selectionnerMois">Afficher mes fiches de frais</a></li>
-                        <li><hr class="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="index.php?uc=deconnexion&action=demandeDeconnexion">Déconnexion</a></li>
-                    </ul>
-                </div>
             </div>
             <?php
             }
