@@ -39,7 +39,13 @@ switch ($action) {
             $nom = $visiteur['nom'];
             $prenom = $visiteur['prenom'];
             Utilitaires::connecter($id, $nom, $prenom);
-            header('Location: index.php');
+            if($visiteur['role'] == "visiteur"){
+                header('Location: index.php?uc=accueil');
+            }else{
+                header('Location: index.php?uc=accueilComptable');
+
+            }
+        
         }
         break;
     default:
