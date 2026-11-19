@@ -26,7 +26,6 @@ switch ($action) {
     case 'demandeDeconnexion':
         if (Utilitaires::estConnecte()) {
             Utilitaires::deconnecter();
-            include PATH_VIEWS . 'v_entete.php';
             include PATH_VIEWS . 'v_deconnexion.php';
         } else {
             Utilitaires::ajouterErreur("Vous n'êtes pas connecté");

@@ -25,33 +25,27 @@ session_start();
 
 $pdo = PdoGsb::getPdoGsb();
 $estConnecte = Utilitaires::estConnecte();
-$estConnecteComptable = Utilitaires::estConnecteComptable();
-
-
 
 $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-if ($uc && !$estConnecte) {
-    require PATH_VIEWS . 'v_entete.php';
+if (!$estConnecte) {
     $uc = 'connexion';
-} elseif (empty($uc) && $estConnecte){
-    require PATH_VIEWS . 'v_entete.php';
-}elseif($estConnecteComptable){
+} elseif ($uc == "accueilComptable") {
     require PATH_VIEWS . 'v_enteteComptable.php';
-}elseif (empty($uc)) {
+} elseif (empty($uc)) {
     require PATH_VIEWS . 'v_entete.php';
     $uc = 'accueil';
+} elseif (!empty($uc)){
+        require PATH_VIEWS . 'v_entete.php';
 }
 
 switch ($uc) {
     case 'connexion':
+        require PATH_VIEWS . 'v_entete.php';
         include PATH_CTRLS . 'c_connexion.php';
         break;
     case 'accueil':
         include PATH_CTRLS . 'c_accueil.php';
-        break;
-    case 'accueilComptable':
-        include PATH_CTRLS . 'c_accueilComptable.php';
         break;
     case 'gererFrais':
         include PATH_CTRLS . 'c_gererFrais.php';
@@ -62,6 +56,10 @@ switch ($uc) {
     case 'deconnexion':
         include PATH_CTRLS . 'c_deconnexion.php';
         break;
+    case 'accueilComptable':
+        include PATH_CTRLS . 'c_accueilComptable.php';
+        break;
+   
     default:
         Utilitaires::ajouterErreur('Page non trouvée, veuillez vérifier votre lien...');
         include PATH_VIEWS . 'v_erreurs.php';
