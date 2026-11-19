@@ -29,6 +29,11 @@ abstract class Utilitaires
         return isset($_SESSION['idVisiteur']);
     }
 
+    public static function estConnecteComptable(): bool
+    {
+        return isset($_SESSION['idComptable']);
+    }
+
     /**
      * Enregistre dans une variable session les infos d'un visiteur
      *

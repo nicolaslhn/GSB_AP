@@ -25,14 +25,21 @@ session_start();
 
 $pdo = PdoGsb::getPdoGsb();
 $estConnecte = Utilitaires::estConnecte();
+$estConnecteComptable = Utilitaires::estConnecteComptable();
 
-require PATH_VIEWS . 'v_entete.php';
+
 
 $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 if ($uc && !$estConnecte) {
+    require PATH_VIEWS . 'v_entete.php';
     $uc = 'connexion';
-} elseif (empty($uc)) {
+} elseif (empty($uc) && $estConnecte){
+    require PATH_VIEWS . 'v_entete.php';
+}elseif($estConnecteComptable){
+    require PATH_VIEWS . 'v_enteteComptable.php';
+}elseif (empty($uc)) {
+    require PATH_VIEWS . 'v_entete.php';
     $uc = 'accueil';
 }
 
