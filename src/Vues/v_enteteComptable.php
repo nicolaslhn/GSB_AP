@@ -44,7 +44,7 @@
                 <hr>
                 <ul class="nav nav-pills flex-column mb-auto">
                     <li class="nav-item">
-                        <a href="index.php" class="nav-link <?php if (!$uc || $uc == 'accueil') { ?>active<?php } else { ?>link-body-emphasis<?php } ?>" aria-current="page">
+                        <a href="index.php?uc=accueilComptable" class="nav-link <?php if (!$uc || $uc == 'accueilComptable') { ?>active<?php } else { ?>link-body-emphasis<?php } ?>" aria-current="page">
                             <span class="bi bi-house me-2"></span>
                             Accueil
                         </a>
