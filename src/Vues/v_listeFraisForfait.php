@@ -32,9 +32,9 @@
                     $idFrais = $unFrais['idfrais'];
                     $libelle = htmlspecialchars($unFrais['libelle']);
                     $quantite = $unFrais['quantite']; ?>
-                    <div class="form-group">
-                        <label for="idFrais"><?php echo $libelle ?></label>
-                        <input type="text" id="idFrais" 
+                    <div class="mb-3">
+                        <label for="<?php echo $idFrais ?>" class="form-label"><?php echo $libelle ?></label>
+                        <input type="text" id="<?php echo $idFrais ?>" 
                                name="lesFrais[<?php echo $idFrais ?>]"
                                size="10" maxlength="5" 
                                value="<?php echo $quantite ?>" 

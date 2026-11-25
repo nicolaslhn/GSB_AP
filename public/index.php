@@ -26,18 +26,22 @@ session_start();
 $pdo = PdoGsb::getPdoGsb();
 $estConnecte = Utilitaires::estConnecte();
 
-require PATH_VIEWS . 'v_entete.php';
-
 $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
-if ($uc && !$estConnecte) {
+if (!$estConnecte) {
     $uc = 'connexion';
+} elseif ($uc == "accueilComptable") {
+    require PATH_VIEWS . 'v_enteteComptable.php';
 } elseif (empty($uc)) {
+    require PATH_VIEWS . 'v_entete.php';
     $uc = 'accueil';
+} elseif (!empty($uc)){
+        require PATH_VIEWS . 'v_entete.php';
 }
 
 switch ($uc) {
     case 'connexion':
+        require PATH_VIEWS . 'v_entete.php';
         include PATH_CTRLS . 'c_connexion.php';
         break;
     case 'accueil':
@@ -52,6 +56,10 @@ switch ($uc) {
     case 'deconnexion':
         include PATH_CTRLS . 'c_deconnexion.php';
         break;
+    case 'accueilComptable':
+        include PATH_CTRLS . 'c_accueilComptable.php';
+        break;
+   
     default:
         Utilitaires::ajouterErreur('Page non trouvée, veuillez vérifier votre lien...');
         include PATH_VIEWS . 'v_erreurs.php';
