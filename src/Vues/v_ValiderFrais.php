@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Vue Liste des frais au forfait
+ * Vue Liste des mois
  *
  * PHP Version 8
  *
@@ -17,12 +17,40 @@
  */
 
 ?>
-<div class="row">    
-    <h3>Eléments forfaitisés</h3>
+<div class="row">
     <div class="col-md-4">
-            <fieldset>       
-                <button class="btn btn-success" type="submit">Ajouter</button>
-                <button class="btn btn-danger" type="reset">Effacer</button>
-            </fieldset>
+    </div>
+    <div class="col-md-4">
+        <form action="index.php?uc=etatFrais&action=voirEtatFrais" 
+              method="post" role="form">
+            <div class="mb-3">
+                <label for="lstMois" accesskey="n" class="form-label">Mois : </label>
+                <select id="lstMois" name="lstMois" class="form-select">
+                    <?php
+                    foreach ($lesMois as $unMois) {
+                        $mois = $unMois['mois'];
+                        $numAnnee = $unMois['numAnnee'];
+                        $numMois = $unMois['numMois'];
+                        if ($mois == $moisASelectionner) {
+                            ?>
+                            <option selected value="<?php echo $mois ?>">
+                                <?php echo $numMois . '/' . $numAnnee ?> </option>
+                            <?php
+                        } else {
+                            ?>
+                            <option value="<?php echo $mois ?>">
+                                <?php echo $numMois . '/' . $numAnnee ?> </option>
+                            <?php
+                        }
+                    }
+                    ?>    
+
+                </select>
+            </div>
+            <input id="ok" type="submit" value="Valider" class="btn btn-success" 
+                   role="button">
+            <input id="annuler" type="reset" value="Effacer" class="btn btn-danger" 
+                   role="button">
+        </form>
     </div>
 </div>

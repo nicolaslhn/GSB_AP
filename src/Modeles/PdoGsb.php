@@ -497,4 +497,16 @@ class PdoGsb
         $requetePrepare->bindParam(':unMois', $mois, PDO::PARAM_STR);
         $requetePrepare->execute();
     }
+
+    public function getVisiteurs()
+    {
+        $requetePrepare = $this->connexion->prepare(
+            'SELECT visiteur.nom AS nom, '
+            . 'visiteur.prenom AS prenom  '
+            . 'FROM visiteur '
+        );
+        $requetePrepare->execute();
+        return $requetePrepare->fetch();
+    }
+
 }

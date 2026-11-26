@@ -17,7 +17,11 @@
 
 if ($estConnecte) {
     include_once PATH_VIEWS . 'v_enteteComptable.php';
-	include PATH_VIEWS . 'v_ValiderFrais.php';
+	$lesVisiteurs = $pdo->getVisiteurs();
+    // Afin de sélectionner par défaut le dernier mois dans la zone de liste
+    // on demande toutes les clés, et on prend la première,
+     // les mois étant triés décroissants
+    include PATH_VIEWS . 'v_listeVisiteur.php';
 } else {
     include PATH_VIEWS . 'v_connexion.php';
 }
