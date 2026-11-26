@@ -30,7 +30,7 @@ $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 if (!$estConnecte) {
     $uc = 'connexion';
-} elseif ($uc == "accueilComptable" || $uc == "gererFraisComptable" || $uc = "deconnexionComptable  ") {
+} elseif ($uc == "accueilComptable" || $uc == "gererFraisComptable" || $uc == "deconnexionComptable") {
     require PATH_VIEWS . 'v_enteteComptable.php';
 } elseif (empty($uc)) {
     require PATH_VIEWS . 'v_entete.php';
