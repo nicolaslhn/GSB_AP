@@ -34,14 +34,14 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-12">
-                        <a href="index.php?uc=gererFrais&action=saisirFrais"
+                        <a href="index.php?uc=gererFraisComptable"
                            class="btn btn-success btn-lg" role="button">
-                            <i class="bi bi-pencil"></i>
-                            <br>Renseigner la fiche de frais</a>
+                            <i class="bi bi-check2"></i>
+                            <br>Voir les fiches de frais</a>
                         <a href="index.php?uc=etatFrais&action=selectionnerMois"
                            class="btn btn-primary btn-lg" role="button">
-                            <i class="bi bi-card-list"></i>
-                            <br>Afficher mes fiches de frais</a>
+                            <i class="bi bi-currency-euro"></i>
+                            <br>Suivre le paiement des fiches de frais</a>
                     </div>
                 </div>
             </div>

@@ -26,7 +26,7 @@
         <meta name="description" content="">
         <meta name="author" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="./styles/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="./styles/bootstrap/bootstrapComptable.css" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
         <link href="./styles/style.css" rel="stylesheet">
     </head>
@@ -50,19 +50,19 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?uc=listeFraisForfait&action=saisirFrais" class="nav-link <?php if ($uc == 'gererFrais') { ?>active<?php } else { ?>link-body-emphasis<?php } ?>">
-                            <span class="bi bi-pencil-fill me-2"></span>
+                        <a href="index.php?uc=gererFraisComptable" class="nav-link <?php if ($uc == 'gererFraisComptable') { ?>active<?php } else { ?>link-body-emphasis<?php } ?>">
+                            <span class="bi bi-check2"></span>
                             Voir les fiches de frais
                         </a>
                     </li>
                     <li class="nav-item">
                         <a href="index.php?uc=etatFrais&action=selectionnerMois" class="nav-link <?php if ($uc == 'etatFrais') { ?>active<?php } else { ?>link-body-emphasis<?php } ?>">
-                            <span class="bi bi-card-list me-2"></span>
-                            Suivre paiement fiche
+                            <span class="bi bi-currency-euro"></span>
+                            Suivre le paiement des fiches de frais
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="index.php?uc=deconnexion&action=demandeDeconnexion" class="nav-link <?php if ($uc == 'deconnexion') { ?>active<?php } else { ?>link-body-emphasis<?php } ?>">
+                        <a href="index.php?uc=deconnexionComptable&action=demandeDeconnexion" class="nav-link <?php if ($uc == 'deconnexionComptable') { ?>active<?php } else { ?>link-body-emphasis<?php } ?>">
                             <span class="bi bi-box-arrow-right me-2"></span>
                             Déconnexion
                         </a>

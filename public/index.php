@@ -30,7 +30,7 @@ $uc = filter_input(INPUT_GET, 'uc', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 if (!$estConnecte) {
     $uc = 'connexion';
-} elseif ($uc == "accueilComptable") {
+} elseif ($uc == "accueilComptable" || $uc == "gererFraisComptable" || $uc = "deconnexionComptable  ") {
     require PATH_VIEWS . 'v_enteteComptable.php';
 } elseif (empty($uc)) {
     require PATH_VIEWS . 'v_entete.php';
@@ -50,11 +50,17 @@ switch ($uc) {
     case 'gererFrais':
         include PATH_CTRLS . 'c_gererFrais.php';
         break;
+    case 'gererFraisComptable':
+        include PATH_CTRLS . 'c_gererFraisComptable.php';
+        break;
     case 'etatFrais':
         include PATH_CTRLS . 'c_etatFrais.php';
         break;
     case 'deconnexion':
         include PATH_CTRLS . 'c_deconnexion.php';
+        break;
+    case 'deconnexionComptable':
+        include PATH_CTRLS . 'c_deconnexionComptable.php';
         break;
     case 'accueilComptable':
         include PATH_CTRLS . 'c_accueilComptable.php';
